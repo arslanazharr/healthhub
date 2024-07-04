@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+@media (min-width: 1024px) {
+  .custom-space-x {
+    padding-left: 10vh !important;
+    padding-right: 10vh !important;
+  }
+  .custom-space-y {
+    padding-top: 10vh !important;
+    padding-bottom: 10vh !important;
+  }
+  .custom-margin-x {
+    margin-left: 10vh !important;
+    margin-right: 10vh !important;
+  }
+}
+
+.custom-space-x2 {
+  padding-left: 3vh;
+  padding-right: 3vh;
+}
+
+.custom-space-y {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.custom-margin-x2 {
+  margin-left: 3vh;
+  margin-right: 3vh;
+}
+
+.custom-margin-y {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.bg-img {
+  background-image: url("./assets/surgeons.svg");
+  background-position: right;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
