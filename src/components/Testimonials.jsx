@@ -12,7 +12,7 @@ const Testimonials = () => (
       {feedbacks.map((feedback, index) => (
         <div
           key={index}
-          className="border-[1px] border-main p-4 min-h-[30vh] min-w-[60vh] flex flex-col gap-2 bg-secondary rounded-xl text-white hover:bg-transparent hover:text-black cursor-default transition"
+          className="border-[1px] border-main p-4 min-w-[350px] max-w-[351px] flex flex-col gap-2 bg-secondary rounded-xl text-white hover:bg-transparent hover:text-black cursor-default transition"
         >
           <div className="flex flex-row text-2xl gap-2">
             <AccountCircleOutlinedIcon className="!text-4xl" />
