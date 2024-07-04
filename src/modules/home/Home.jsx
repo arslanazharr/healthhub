@@ -29,7 +29,7 @@ const Home = () => {
       </div>
 
       <div className="py-10 px-5">
-        <div className="flex whitespace-nowrap text-black text-[4vh] lg:text-[6vh] justify-center text-center mb-10 gap-4">
+        <div className="flex whitespace-nowrap text-black text-[4vh] lg:text-[6vh] justify-center text-center mb-10 gap-2 lg:gap-4">
           <p>Our</p>
           <p className="font-bold">Services</p>
         </div>
