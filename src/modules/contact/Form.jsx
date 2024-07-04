@@ -14,6 +14,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import FormHelperText from "@mui/material/FormHelperText";
 import { useDispatch } from "react-redux";
 import { postContact } from "../../redux/contact/postSlice";
+import { useCallback } from "react";
 
 const schema = yup.object().shape({
   description: yup
@@ -40,7 +41,7 @@ const schema = yup.object().shape({
   date: yup.date().required("You must add a date"),
 });
 
-const Form = (props) => {
+const Form = () => {
   const methods = useForm({
     defaultValues: {
       description: "",
@@ -62,13 +63,26 @@ const Form = (props) => {
 
   const dispatch = useDispatch();
 
-  const onSubmit = async (data) => {
-    try {
-      await dispatch(postContact(data));
-      reset();
-    } catch (error) {
-      console.error("Error submitting form:", error);
-    }
+  const debouncedSubmit = useCallback(
+    (data) => {
+      const timerId = setTimeout(async () => {
+        try {
+          await dispatch(postContact(data));
+          reset();
+        } catch (error) {
+          console.error("Error submitting form:", error);
+        }
+      }, 1000);
+
+      return () => {
+        clearTimeout(timerId);
+      };
+    },
+    [dispatch, reset]
+  );
+
+  const onSubmit = (data) => {
+    debouncedSubmit(data);
   };
 
   return (
