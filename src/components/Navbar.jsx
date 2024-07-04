@@ -150,8 +150,8 @@ const Navbar = () => {
                 >
                   <CloseIcon color="primary" />
                 </div>
-                <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-main px-[4vh] pb-4 ring-1 ring-white/10">
-                  <nav className="flex flex-1 flex-col mt-[5vh]">
+                <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-main p-[4vh] ring-1 ring-white/10">
+                  <nav className="flex flex-1 flex-col">
                     <NavLink
                       className="flex items-center py-3"
                       to="/home"
@@ -213,7 +213,7 @@ const Navbar = () => {
                       </div>
                     </NavLink>
                   </nav>
-                  <div className="my-14 flex items-center justify-between px-8">
+                  <div className="flex items-center justify-between px-8">
                     <NavLink to="/home" onClick={handleCloseNav}>
                       <img src={logo} alt="Logo" />
                     </NavLink>
