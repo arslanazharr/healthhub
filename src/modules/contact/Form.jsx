@@ -189,7 +189,7 @@ const Form = (props) => {
             variant="contained"
             fullWidth
             disabled={!isValid}
-            className="!py-3"
+            className="!py-3 !text-white"
           >
             Add
           </Button>
