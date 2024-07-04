@@ -3,7 +3,7 @@ import { feedbacks } from "../utils/constants";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 
 const Testimonials = () => (
-  <div className="bg-gray-100 py-10 px-1">
+  <div className="bg-gray-100 py-10 px-5">
     <div className="flex whitespace-nowrap text-black text-[4vh] lg:text-[6vh] justify-center text-center mb-10 gap-4">
       <p>Smiling</p>
       <p className="font-bold">Faces</p>
