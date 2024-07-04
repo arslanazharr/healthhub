@@ -24,7 +24,6 @@ const Home = () => {
                     strings: [
                       "expert doctor?",
                       "experienced physician?",
-                      "accomplished specialist?",
                       "exceptional surgeon?",
                     ],
                     autoStart: true,

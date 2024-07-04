@@ -50,4 +50,10 @@ body {
 
 .rfm-marquee {
   margin-left: 16px !important;
+  background-color: transparent !important;
+}
+
+.rfm-overlay {
+  --gradient-color: #ffffff75 !important;
+  --gradient-width: 98px !important;
 }
