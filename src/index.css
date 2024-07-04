@@ -47,3 +47,7 @@ body {
   background-repeat: no-repeat;
   opacity: 0.8;
 }
+
+.rfm-marquee {
+  margin-left: 16px !important;
+}
