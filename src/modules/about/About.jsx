@@ -3,6 +3,7 @@ import ContactGrid from "../../components/ContactGrid";
 import ServicesGrid from "../../components/ServicesGrid";
 import Stats from "../../components/Stats";
 import WhyUs from "../../components/WhyUs";
+import { Bounce, Zoom, Fade, Reveal } from "react-reveal";
 
 const About = () => {
   useEffect(() => {
@@ -23,7 +24,9 @@ const About = () => {
           </p>
         </div>
 
-        <ServicesGrid />
+        <Zoom>
+          <ServicesGrid />
+        </Zoom>
       </div>
       <div className="bg-gray-100 custom-space-x custom-space-x2">
         <div className="custom-space-x custom-space-x2 flex flex-col gap-3">
@@ -33,25 +36,29 @@ const About = () => {
           </div>
         </div>
 
-        <div className="py-10">
-          <WhyUs />
-        </div>
+        <Bounce>
+          <div className="py-10">
+            <WhyUs />
+          </div>
+        </Bounce>
       </div>
-      <div className="">
+      <Fade className="">
         <Stats />
-      </div>
+      </Fade>
 
-      <div className="lg:py-[10vh] py-[6vh]">
-        <div className="flex whitespace-nowrap text-black text-[3vh] lg:text-[5vh] justify-center text-center gap-2 lg:gap-4">
-          <p className="font-bold">Contact</p>
+      <Reveal bottom>
+        <div className="lg:py-[10vh] py-[6vh]">
+          <div className="flex whitespace-nowrap text-black text-[3vh] lg:text-[5vh] justify-center text-center gap-2 lg:gap-4">
+            <p className="font-bold">Contact</p>
+          </div>
+          <p className="text-center">
+            Read doctor-produced health and medical information written for you
+            to make informed decisions about your health concerns.
+          </p>
+
+          <ContactGrid />
         </div>
-        <p className="text-center">
-          Read doctor-produced health and medical information written for you to
-          make informed decisions about your health concerns.
-        </p>
-
-        <ContactGrid />
-      </div>
+      </Reveal>
     </>
   );
 };
