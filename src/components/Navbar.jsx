@@ -213,7 +213,7 @@ const Navbar = () => {
                       </div>
                     </NavLink>
                   </nav>
-                  <div className="flex items-center justify-between px-8">
+                  <div className="flex items-center justify-between px-14">
                     <NavLink to="/home" onClick={handleCloseNav}>
                       <img src={logo} alt="Logo" />
                     </NavLink>
