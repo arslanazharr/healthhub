@@ -3,6 +3,7 @@ import Testimonials from "../../components/Testimonials";
 import ServicesGrid from "../../components/ServicesGrid";
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
+import Typewriter from "typewriter-effect";
 
 const Home = () => {
   useEffect(() => {
@@ -13,14 +14,28 @@ const Home = () => {
     <>
       <div className="custom-space-x custom-space-x2 custom-space-y bg-img h-[60vh] flex justify-center bg-secondary">
         <div className="flex flex-col gap-6 items-center justify-center">
-          <div className="flex md:flex-row flex-col gap-3 whitespace-nowrap text-white text-[4vh] lg:text-[6vh]">
-            <p>Looking for an</p>
-            <p className="font-bold">Expert Doctor?</p>
+          <div className="flex md:flex-row text-center flex-col gap-1 lg:gap-3 text-white text-[4vh] lg:text-[6vh]">
+            <p>Need an</p>
+            <p className="font-bold">
+              <Typewriter
+                options={{
+                  strings: [
+                    "expert doctor?",
+                    "experienced physician?",
+                    "accomplished specialist?",
+                    "exceptional surgeon?",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  deleteSpeed: "number",
+                }}
+              />
+            </p>
           </div>
 
           <div>
             <NavLink to="/contact">
-              <button className="px-10 border-[1px] hover:bg-transparent bg-white text-main border-white py-4 hover:text-white transition rounded-md text-2xl">
+              <button className="lg:px-10 px-5 border-[1px] hover:bg-transparent bg-white text-main border-white py-4 hover:text-white transition rounded-md text-xl lg:text-2xl">
                 Book an Appointment
               </button>
             </NavLink>
