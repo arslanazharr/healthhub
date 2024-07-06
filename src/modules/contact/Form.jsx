@@ -12,9 +12,12 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import FormHelperText from "@mui/material/FormHelperText";
-import { useDispatch } from "react-redux";
+import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
+import { useDispatch, useSelector } from "react-redux";
 import { postContact } from "../../redux/contact/postSlice";
 import { useCallback } from "react";
+import CircularProgress from "@mui/material/CircularProgress";
+import dayjs from "dayjs";
 
 const schema = yup.object().shape({
   description: yup
@@ -62,6 +65,8 @@ const Form = () => {
   } = methods;
 
   const dispatch = useDispatch();
+
+  const isLoading = useSelector((state) => state?.contact.isLoading);
 
   const debouncedSubmit = useCallback(
     (data) => {
@@ -166,17 +171,14 @@ const Form = () => {
           name="date"
           control={control}
           render={({ field }) => (
-            <FormControl error={!!errors.date} fullWidth>
-              <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DatePicker
-                  {...field}
-                  renderInput={(params) => <TextField {...params} />}
-                />
-              </LocalizationProvider>
-              {errors.date && (
-                <FormHelperText error>{errors.date.message}</FormHelperText>
-              )}
-            </FormControl>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DateTimePicker
+                label="Appointment Date"
+                className="!w-full"
+                {...field}
+                minDate={dayjs()}
+              />
+            </LocalizationProvider>
           )}
         />
 
@@ -203,9 +205,13 @@ const Form = () => {
             variant="contained"
             fullWidth
             disabled={!isValid}
-            className="!py-3 !text-white"
+            className="!py-3 !text-white h-12"
           >
-            Add
+            {isLoading ? (
+              <CircularProgress className="!text-white" size={25} />
+            ) : (
+              "Add"
+            )}
           </Button>
         </div>
       </form>

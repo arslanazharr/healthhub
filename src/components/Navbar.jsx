@@ -42,13 +42,13 @@ const Navbar = () => {
         <div className="lg:hidden">
           <MenuIcon
             onClick={handleNavOpen}
-            className="!text-4xl !p-0 !m-0 text-white"
+            className="!text-3xl !p-0 !m-0 text-white"
           />
         </div>
 
         <div className="flex items-center justify-between">
           <NavLink to="/home">
-            <img src={logo} alt="Logo" className="w-[120px] lg:w-[200px]" />
+            <img src={logo} alt="Logo" className="w-[120px] lg:w-[170px]" />
           </NavLink>
         </div>
 
