@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, Fragment } from "react";
 import HomeIcon from "@mui/icons-material/Home";
 import Groups2Icon from "@mui/icons-material/Groups2";
@@ -9,6 +10,7 @@ import { Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import logo from "../assets/logo.svg";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useScroll } from "../context/scrollContext"; // Import ScrollProvider
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -36,9 +38,17 @@ const Navbar = () => {
     setOpenNav(false);
   };
 
+  const scrollPositon = useScroll();
+
+  console.log(scrollPositon);
+
   return (
     <>
-      <header className="text-4xl bg-main lg:px-[10vh] px-[3vh] py-3 w-full flex flex-row items-center justify-between">
+      <header
+        className={`text-4xl lg:px-[10vh] px-[3vh] w-full flex flex-row items-center justify-between h-[7vh] bg-main z-[9999] ${
+          scrollPositon > 70 ? "fixed top-0" : "relative"
+        }`}
+      >
         <div className="lg:hidden">
           <MenuIcon
             onClick={handleNavOpen}
@@ -48,7 +58,7 @@ const Navbar = () => {
 
         <div className="flex items-center justify-between">
           <NavLink to="/home">
-            <img src={logo} alt="Logo" className="w-[120px] lg:w-[170px]" />
+            <img src={logo} alt="Logo" className="w-[120px]" />
           </NavLink>
         </div>
 
@@ -60,9 +70,11 @@ const Navbar = () => {
               style={navStyle2}
               onClick={handleCloseNav}
             >
-              <div className="flex !items-center gap-2 px-2 py-1 justify-start">
-                <HomeIcon className="!p-0 !m-0" />
-                <Typography className="!p-0 !m-0 !text-[16px]">Home</Typography>
+              <div className="flex !items-center gap-2 px-2 justify-start">
+                <HomeIcon className="!p-0 !m-0 !text-[20px]" />
+                <Typography className=" !text-[16px] !p-0 !m-0 ">
+                  Home
+                </Typography>
               </div>
             </NavLink>
           </li>
@@ -73,9 +85,9 @@ const Navbar = () => {
               style={navStyle2}
               onClick={handleCloseNav}
             >
-              <div className="flex !items-center gap-2 px-2 py-1 justify-start">
-                <Groups2Icon className="!p-0 !m-0" />
-                <Typography className="!p-0 !m-0 !text-[16px]">
+              <div className="flex !items-center gap-2 px-2 justify-start">
+                <Groups2Icon className="!p-0 !m-0 !text-[20px]" />
+                <Typography className="!text-[16px] !p-0 !m-0">
                   About
                 </Typography>
               </div>
@@ -88,9 +100,9 @@ const Navbar = () => {
               style={navStyle2}
               onClick={handleCloseNav}
             >
-              <div className="flex !items-center gap-2 px-2 py-1 justify-start">
-                <MedicalServicesIcon className="!p-0 !m-0" />
-                <Typography className="!p-0 !m-0 !text-[16px]">
+              <div className="flex !items-center gap-2 px-2 justify-start">
+                <MedicalServicesIcon className="!p-0 !m-0 !text-[20px]" />
+                <Typography className=" !text-[16px] !p-0 !m-0">
                   Services
                 </Typography>
               </div>
@@ -104,9 +116,9 @@ const Navbar = () => {
               style={navStyle2}
               onClick={handleCloseNav}
             >
-              <div className="flex !items-center gap-2 px-2 py-1 justify-start">
-                <ContactPageIcon className="!p-0 !m-0" />
-                <Typography className="!p-0 !m-0 !text-[16px]">
+              <div className="flex !items-center gap-2 px-2 justify-start">
+                <ContactPageIcon className="!p-0 !m-0 !text-[20px]" />
+                <Typography className=" !text-[16px] !p-0 !m-0">
                   Contact
                 </Typography>
               </div>

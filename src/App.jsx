@@ -7,6 +7,8 @@ import Navbar from "./components/Navbar";
 import React, { Suspense } from "react";
 import Footer from "./components/Footer";
 import LinearProgress from "@mui/material/LinearProgress";
+import { ScrollProvider, useScroll } from "./context/scrollContext";
+import "./components/style.css";
 
 const theme = createTheme({
   palette: {
@@ -22,15 +24,21 @@ const Services = React.lazy(() => import("./modules/services/Services"));
 const Contact = React.lazy(() => import("./modules/contact/Contact"));
 
 function App() {
-  return <AppContent />;
+  return (
+    <ScrollProvider>
+      <AppContent />
+    </ScrollProvider>
+  );
 }
 
 function AppContent() {
+  const scrollPositon = useScroll();
+
   return (
     <ThemeProvider theme={theme}>
       <ToastContainer />
       <Navbar />
-      <main>
+      <main className={`${scrollPositon > 70 && "pt-[7vh]"}`}>
         <Suspense fallback={<LinearProgress color="success" />}>
           <Routes>
             <Route path="/" element={<Navigate to="/home" />} />
