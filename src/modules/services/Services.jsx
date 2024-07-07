@@ -24,17 +24,17 @@ const Services = () => {
         {services.map((obj, ind) => (
           <Slide right={ind % 2 !== 0} left={ind % 2 === 0} key={obj.id}>
             <div
-              className={`flex flex-col custom-space-x custom-space-x2 custom-space-y ${
+              className={`flex flex-col custom-space-x custom-space-x2 custom-space-y rounded-3xl mb-5 ${
                 ind % 2 === 0
                   ? "md:flex-row bg-gray-100"
-                  : "md:flex-row-reverse bg-white"
+                  : "md:flex-row-reverse bg-[#d7f3f3]"
               }`}
             >
               <div className="md:w-1/2 p-4">
                 <img
                   src={obj.img}
                   alt="Image description"
-                  className={`mx-auto md:mx-0 ${
+                  className={`mx-auto md:mx-0 rounded-3xl ${
                     ind % 2 === 0
                       ? "md:float-left md:mr-4 mb-4 md:mb-0"
                       : "md:float-right md:ml-4 mb-4 md:mb-0"
