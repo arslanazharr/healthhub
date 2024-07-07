@@ -1,15 +1,9 @@
 import Form from "./Form";
-import Map from "../../components/Map";
 import ContactGrid from "../../components/ContactGrid";
 import { useEffect } from "react";
 import { Bounce, Reveal } from "react-reveal";
 
 const Contact = () => {
-  const obj = {
-    lat: 31.3765108,
-    lng: 74.1848958,
-  };
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -52,9 +46,14 @@ const Contact = () => {
         </div>
 
         <Bounce>
-          <div className="w-full h-full">
-            <Map center={obj} zoom={16} />
-          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3406.3643627465594!2d74.18232087627038!3d31.37651535423399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3918ff93c5a98f77%3A0x888e3bdc64104c95!2sArtificial%20Intelligence%20For%20Life%20(AI4LYF)!5e0!3m2!1sen!2s!4v1720311128939!5m2!1sen!2s"
+            width="auto"
+            height="450"
+            allowfullscreen
+            loading="lazy"
+            className="md:w-[650px] w-auto"
+          ></iframe>
         </Bounce>
       </div>
     </>
