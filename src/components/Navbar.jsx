@@ -56,9 +56,9 @@ const Navbar = () => {
           />
         </div>
 
-        <div className="flex items-center justify-between sm:py-0 py-3">
+        <div className="flex items-center justify-between">
           <NavLink to="/home">
-            <img src={logo} alt="Logo" className="w-[120px]" />
+            <img src={logo} alt="Logo" className="w-[120px] sm:py-0 py-3" />
           </NavLink>
         </div>
 
