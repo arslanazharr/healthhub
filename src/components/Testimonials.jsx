@@ -9,7 +9,7 @@ const Testimonials = () => (
       <p>Smiling</p>
       <p className="font-bold">Faces</p>
     </div>
-    <Marquee pauseOnHover="true">
+    <Marquee pauseOnHover="true" speed={100}>
       <div className="flex overflow-auto w-full gap-4">
         {feedbacks.map((feedback, index) => (
           <div
